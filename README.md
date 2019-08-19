@@ -1,6 +1,6 @@
 ## Unit Testing Assignment
 
-by Bill Gates.
+by Chananchida Fuachai.
 
 
 ## Test Cases for unique
@@ -9,11 +9,12 @@ Write a table describing your test cases.
 
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
-| empty list             |  empty list         |
-| one item               |  list with 1 item   |
-| one item many times    |  list with 1 item   |
-| 2 items, many times, many orders | 2 item list, items in same order  |
-| what other test case?  |  what result?       |
+| []             |  []        |
+| ['hi']               |  ['hi']  |
+| ['cat', 'cat', 'cat', 'cat', 'cat']    |  ['cat']   |
+| ['cat', 'dog', 'cat', 'cat', 'dog'] | ['cat', 'dog']  |
+| ['a', 'b', ['a', 'a'], 'b', 'c', ['a', 'a'], 'b', 'c'] | ['a', 'b', ['a', 'a'], 'c'] |
+| 2  |  TypeError       |
 
 
 ## Test Cases for Fraction

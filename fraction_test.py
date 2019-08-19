@@ -26,6 +26,14 @@ class FractionTest(unittest.TestCase):
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
 
+    def test_non_int_or_float(self):
+        with self.assertRaises(TypeError):
+            Fraction('str', 3)
+    
+    def test_invalid_value(self):
+        with self.assertRaises(ValueError):
+            Fraction(0,0)
+
     # TODO Write tests for __init__, __eq__, +, *.
     # Here is an example, but you must add more test cases.  
     # The test requires that your __eq__ is correct.
@@ -49,8 +57,12 @@ class FractionTest(unittest.TestCase):
         self.assertTrue(f.__eq__(g))  # same thing
         self.assertFalse(f == h)
         self.assertFalse(f.__eq__(h))
+        self.assertTrue(Fraction(1,0) == Fraction(9999999,0)) # Check if denominator = 0
+        self.assertTrue(Fraction(-1,0) == Fraction(-9999999,0)) # Check if denominator = 0
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
+        self.assertFalse(Fraction(0) == Fraction(1,0))
+        self.assertFalse(Fraction(-1,0) == Fraction(1,0))
 
     def test_gt(self):
         f = Fraction(2,3)

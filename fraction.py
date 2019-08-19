@@ -37,7 +37,7 @@ class Fraction:
                 denominator = abs(denominator)
                 numerator = -numerator
 
-        # make fractions
+        # stored in proper form
         self.numerator = numerator // gcd(numerator, denominator)
         self.denominator = denominator // gcd(numerator, denominator)
 

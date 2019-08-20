@@ -20,6 +20,13 @@ Write a table describing your test cases.
 
 ## Test Cases for Fraction
 
+**Initialize (`__init__`)**
+
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| non-int or non-float | TypeError |
+| Demominator and numerator = 0 |  ValueError   |
+
 **String representation (`__str__`)**
 
 | Test case              |  Expected Result    |

@@ -24,6 +24,7 @@ Write a table describing your test cases.
 
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
+| non-zero demominator and numerator | Represent in numerator/Demominator |
 | non-int or non-float | TypeError |
 | Demominator and numerator = 0 |  ValueError   |
 

@@ -56,7 +56,7 @@ Write a table describing your test cases.
 | Negative fractions subtract together | Negative/positive fraction |
 | Fraction subtract zero | The same fraction |
 
-**Multiple Operator (`__mul__`)**
+**Multiply Operator (`__mul__`)**
 
 | Test case              |  Expected Result    |
 |------------------------|---------------------|

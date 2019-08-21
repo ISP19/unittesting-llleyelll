@@ -27,10 +27,12 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("99", f.__str__())
 
     def test_non_int_or_float(self):
+        # If initialize the fraction with non-int or non-float will raise exception
         with self.assertRaises(TypeError):
             Fraction('str', 3)
     
     def test_invalid_value(self):
+        # If initialize the fraction with 0/0 will raise exception
         with self.assertRaises(ValueError):
             Fraction(0,0)
 
@@ -44,13 +46,16 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(2), Fraction(1,2)+Fraction(3,2))
         self.assertEqual(Fraction(9,8), Fraction(0)+Fraction(9,8))
         self.assertEqual(Fraction(-16,8), Fraction(-7,8)+Fraction(-9,8))
+        self.assertEqual(Fraction(1,0), Fraction(1,0)+Fraction(5,6))
     
     def test_mul(self):
+        # 2/36 = 1/12 * 2/3
         self.assertEqual(Fraction(2,36), Fraction(1,12) * Fraction(2,3))
         self.assertEqual(Fraction(1), Fraction(4) * Fraction(3,12))
         self.assertEqual(Fraction(0), Fraction(0) * Fraction(500,-20000))
     
     def test_sub(self):
+        # -7/12 = 1/12 - 2/3
         self.assertEqual(Fraction(-7,12), Fraction(1,12) - Fraction(2,3))
         self.assertEqual(Fraction(7,4), Fraction(2) - Fraction(1,4))
 
@@ -71,12 +76,14 @@ class FractionTest(unittest.TestCase):
         self.assertTrue(Fraction(3,4) == Fraction(-9,-12))
 
     def test_gt(self):
+        # 2/3 > 5/12 True
         f = Fraction(2,3)
         g = Fraction(5,12)
         self.assertTrue(f.__gt__(g))
         self.assertFalse(g.__gt__(f))
 
     def test_neg(self):
+        # -3/4 is 3/4
         self.assertEqual(Fraction(-3,4), -Fraction(3,4))
         self.assertEqual(Fraction(3,4), -Fraction(3,-4))
         self.assertEqual(Fraction(-99), -Fraction(99))

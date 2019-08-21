@@ -51,25 +51,38 @@ class Fraction:
         return Fraction(result_nume, result_deno)
 
     def __mul__(self, frac):
+        """Return the product of two fractions as a new fraction.
+           As the formula a/b * c/d = (a*c)/(b*d)
+        """
         result_nume = self.numerator * frac.numerator
         result_deno = self.denominator * frac.denominator
         return Fraction(result_nume, result_deno)
 
     def __sub__(self, frac):
+        """Return the difference of two fractions as a new fraction.
+           As the formula a/b * c/d = (ad-bc)/(b*d)
+        """
         result_nume = ((self.numerator * frac.denominator) -
                        (self.denominator * frac.numerator))
         result_deno = (self.denominator * frac.denominator)
         return Fraction(result_nume, result_deno)
 
     def __gt__(self, frac):
+        """Return whether this fraction is grather than other as boolean.
+           Such as (2/3) > (5/12) return True.
+        """
         check_self = self.numerator * frac.denominator
         check_other = self.denominator * frac.numerator
         return check_self > check_other
 
     def __neg__(self):
+        """Return the negative of the fraction.
+           Such as (2/3) return -(2/3).
+        """
         return Fraction(-self.numerator, self.denominator)
 
     def __str__(self):
+        """Return the proper form of the fraction."""
         if self.numerator % self.denominator == 0:
             return f"{int(self.numerator / self.denominator)}"
         return f"{int(self.numerator)}/{int(self.denominator)}"

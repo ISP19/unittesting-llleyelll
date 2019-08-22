@@ -46,6 +46,7 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(9,8), Fraction(0)+Fraction(9,8))
         self.assertEqual(Fraction(-16,8), Fraction(-7,8)+Fraction(-9,8))
         self.assertEqual(Fraction(1,0), Fraction(1,0)+Fraction(5,6))
+        self.assertEqual(Fraction(0,0), Fraction(0,0)+Fraction(5,6))
     
     def test_mul(self):
         # 2/36 = 1/12 * 2/3

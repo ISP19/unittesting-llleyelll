@@ -26,7 +26,6 @@ Write a table describing your test cases.
 |------------------------|---------------------|
 | non-zero demominator and numerator | Represent in numerator/Demominator |
 | non-int or non-float | TypeError |
-| Demominator and numerator = 0 |  ValueError   |
 
 **String representation (`__str__`)**
 
@@ -36,8 +35,8 @@ Write a table describing your test cases.
 | Only numerator |  Whole number of the numerator and provide default denominator = 1   |
 | Demominator = 0, numerator > 0 | Represent in 1/0 |
 | Demominator = 0, numerator < 0 | Represent in -1/0 |
+| Denominator and numerator are both zero |  Represent in 0/0   |
 | Denominator is negative and numerator is positive | The numerator is negative, the denominator is positive|
-| Denominator and numerator are both zero |  ValueError   |
 | non-int or non-float | TypeError |
 
 **Addition Operator (`__add__`)**

@@ -22,13 +22,12 @@ class Fraction:
 
         if denominator == 0:
             if numerator == 0:
-                raise ValueError("The denominator and the numerator cannot be zero")
+                numerator = 0
+            elif numerator > 0:
+                numerator = 1
             else:
-                if numerator > 0:
-                    numerator = 1
-                else:
-                    numerator = -1
-                denominator = 0
+                numerator = -1
+            denominator = 0
         else:
             if denominator < 0 and numerator < 0:
                 denominator = abs(denominator)
@@ -38,8 +37,12 @@ class Fraction:
                 numerator = -numerator
 
         # stored in proper form
-        self.numerator = numerator // gcd(numerator, denominator)
-        self.denominator = denominator // gcd(numerator, denominator)
+        if denominator == 0 and numerator == 0:
+            self.numerator = numerator
+            self.denominator = denominator
+        else:
+            self.numerator = numerator // gcd(numerator, denominator)
+            self.denominator = denominator // gcd(numerator, denominator)
 
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
@@ -83,9 +86,14 @@ class Fraction:
 
     def __str__(self):
         """Return the proper form of the fraction."""
-        if self.numerator % self.denominator == 0:
-            return f"{int(self.numerator / self.denominator)}"
-        return f"{int(self.numerator)}/{int(self.denominator)}"
+        if self.numerator != 0 and self.denominator != 0:
+            if self.numerator % self.denominator == 0:
+                return f"{int(self.numerator // self.denominator)}"
+            return f"{int(self.numerator)}/{int(self.denominator)}"
+        else:
+            if self.numerator == 0 and self.denominator != 0:
+                return f"{int(self.numerator // self.denominator)}"
+            return f"{int(self.numerator)}/{int(self.denominator)}"
 
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.

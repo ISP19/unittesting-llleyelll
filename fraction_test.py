@@ -25,16 +25,15 @@ class FractionTest(unittest.TestCase):
         # Constructor should provide default denominator = 1
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
+        f = Fraction(0,0)
+        self.assertEqual("0/0", f.__str__())
+        f = Fraction(-1,0)
+        self.assertEqual("-1/0", f.__str__())
 
-    def test_non_int_or_float(self):
+    def test_invalid_fraction(self):
         # If initialize the fraction with non-int or non-float will raise exception
         with self.assertRaises(TypeError):
             Fraction('str', 3)
-    
-    def test_invalid_value(self):
-        # If initialize the fraction with 0/0 will raise exception
-        with self.assertRaises(ValueError):
-            Fraction(0,0)
 
     # TODO Write tests for __init__, __eq__, +, *.
     # Here is an example, but you must add more test cases.  

@@ -1,5 +1,7 @@
 ## Unit Testing Assignment
 
+[![Build Status](https://travis-ci.com/llleyelll/demo-pyci.svg?branch=master)](https://travis-ci.com/llleyelll/demo-pyci)
+
 by Chananchida Fuachai.
 
 

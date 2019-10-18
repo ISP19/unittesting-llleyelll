@@ -58,6 +58,7 @@ class FractionTest(unittest.TestCase):
         # -7/12 = 1/12 - 2/3
         self.assertEqual(Fraction(-7,12), Fraction(1,12) - Fraction(2,3))
         self.assertEqual(Fraction(7,4), Fraction(2) - Fraction(1,4))
+        
 
     def test_eq(self):
         f = Fraction(1,2)
@@ -88,3 +89,6 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(3,4), -Fraction(3,-4))
         self.assertEqual(Fraction(-99), -Fraction(99))
         self.assertEqual(Fraction(0), -Fraction(0))
+    
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

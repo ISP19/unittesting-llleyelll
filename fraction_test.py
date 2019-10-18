@@ -30,10 +30,15 @@ class FractionTest(unittest.TestCase):
         f = Fraction(-1,0)
         self.assertEqual("-1/0", f.__str__())
 
-    def test_invalid_fraction(self):
+    def test_invalid_numerator_fraction(self):
         # If initialize the fraction with non-int or non-float will raise exception
         with self.assertRaises(TypeError):
             Fraction('str', 3)
+
+    def test_invalid_denominator_fraction(self):
+        # If initialize the fraction with non-int or non-float will raise exception
+        with self.assertRaises(TypeError):
+            Fraction(3, 'str')
 
     # TODO Write tests for __init__, __eq__, +, *.
     # Here is an example, but you must add more test cases.  

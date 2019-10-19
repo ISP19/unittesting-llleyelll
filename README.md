@@ -1,6 +1,6 @@
 ## Unit Testing Assignment
 
-[![Build Status](https://travis-ci.com/llleyelll/demo-pyci.svg?branch=master)](https://travis-ci.com/llleyelll/demo-pyci)
+[![Build Status](https://travis-ci.com/llleyelll/unittesting-llleyelll.svg?branch=master)](https://travis-ci.com/llleyelll/unittesting-llleyelll)
 [![codecov](https://codecov.io/gh/llleyelll/unittesting-llleyelll/branch/master/graph/badge.svg)](https://codecov.io/gh/llleyelll/unittesting-llleyelll)
 
 by Chananchida Fuachai.
